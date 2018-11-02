@@ -79,6 +79,47 @@ namespace BookCatalogue
              }
 }
 
+/*
+   public static void AuthorNamedAdam()
+         { Console.WriteLine("The AuthorNamedAdam Method Ran");
+            using(var db = new AppDbContext())
+             {
+                 var filteredResult = from s in db.Books
+                 where s.AuthorId == "Apress"   //.Where(s => s.AuthorName.Contains(term) || s.Title.Contains(term))
+                 select "Book Title: " + s.Title + ", Publisher:" + s.Publisher;
+
+                 PrintList(filteredResult);
+             }
+}
+ */
 //Where publisher is a certain one
+
+//Grouped by publisher
+
+
+         public static void PublisherGroup()
+         {
+             using(var db = new AppDbContext())
+             {
+                var groupedResult = from s in db.Books
+                group s by s.Publisher;
+                foreach(var publisherGroup in groupedResult)
+                {
+                    Console.WriteLine($"Publisher Group: {publisherGroup.Key}");
+                    foreach(Books s in publisherGroup)
+                    {
+                    Console.WriteLine("--" + s.Title);
+
+                    }
+                }
+
+                //PrintList(groupedResult);
+                }
+         }
+
+
+
+
+//End grouped by publisher
     }
 }

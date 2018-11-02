@@ -36,6 +36,8 @@ namespace BookCatalogue
                 Console.WriteLine( "Commands:");
                 Console.WriteLine("1) Full List of Everyone!"); 
                 Console.WriteLine("2) Show books with publish Apress");
+                Console.WriteLine("4) show all Books Grouped by publisher");
+               // Console.WriteLine("5) show all Books Grouped by publisher and sorted by Author's last name");
                 Console.WriteLine("0) exit)");
                 Console.WriteLine("--------------------------------------------");
 
@@ -56,8 +58,23 @@ namespace BookCatalogue
                         Commands.CertianBookPublisher();
                         validChoice = false;
                         break;
+/*
+                        case "3":
+                        Commands.AuthorNamedAdam();
+                        validChoice = false;
+                        break;
+*/
 
-                    
+                        case "4":
+                        Commands.PublisherGroup();
+                        validChoice = false;
+                        break;
+
+                        /* case "5":
+                        Commands.PublisherGroupLastNameSort();
+                        validChoice = false;
+                        break;
+                    */
                   
                          
                     case "0":
